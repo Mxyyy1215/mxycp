@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0px;
+	padding:0px;
+}
+body {
+	margin:0 auto;
+	font:12px/1.6 "宋体";
+}
+.loginbox{ background:url(../images/bg.png) 0 0 repeat;}
+.login { background: url(../images/wuyebg.png) center center no-repeat; height:260px; margin: auto; width:400px; position:absolute; left:0; top:0; right:0; bottom:0   }
+.butbox { padding: 53px 0 0 10px; position:relative }
+.butbox dl { height: 50px; position: relative }
+.butbox dl dt { height: 34px; line-height: 34px; width: 90px; float: left; text-align: right; }
+.butbox dl dd { height: 34px; line-height: 34px; width:280px; float: left; }
+.butbox dl dd input { text-indent:10px; background:none; border:none; text-indent:20px; height: 34px; line-height: 34px; border: 1px solid #dbdbdb; width: 218px; }
+.msg { clear: both; line-height: 20px; border: 1px solid #DCDCDC; color: #888; margin-left: 55px; background-color: #FFFFFF; padding-right: 2px; padding-left: 2px; width: 130px; margin-bottom: 3px; }
+.butbox dl dd input.inputa { text-indent:0px; text-indent:0px; width: 219px; height: 36px;  border: none;  background: #f00; cursor: pointer }
+.butbox p{ padding:0 150px; height:30px;}
+.res{  background: url(../images/res.png) center center no-repeat; height:920px; margin:0 auto; width:1200px; padding-top:70px  }
+.resbox{ background:url(../images/resbox.png) center center no-repeat; width:420px; height:630px; margin:0 auto; padding-top:220px }
+.saletips{ line-height:40px;font-family: "Microsoft YaHei UI", "微软雅黑"; font-weight:normal; font-size:16px; position:absolute;top: 6px;
+    left: 79px; width:270px;  }
+	.saletips a{ float:right; font-size:12px;}
