@@ -30,14 +30,14 @@ include("left.php");
 <?php
 include("../conn.php");
 
-if(!isset($_SESSION['name'])){//判断是否登陆用户
+if(!isset($_SESSION['name'])){//Determine whether to log in
 	echo '<script type="text/javascript">alert("please log in first!")</script>';
 	echo '<script type="text/javascript">location.href="index.php";</script>';
 	exit;
 	}
  
-	$rs2=mysqli_query($link,"select * from tb_gonggao"); //查询数据库
-	while($row=mysqli_fetch_array($rs2)){ //遍历
+	$rs2=mysqli_query($link,"select * from tb_gonggao"); //query the database
+	while($row=mysqli_fetch_array($rs2)){ //traverse
 ?>
 
             <tr>

@@ -29,14 +29,14 @@ include("left.php");
 <?php
 include("../conn.php");
 
-if(!isset($_SESSION['name'])){//判断是否登陆用户
+if(!isset($_SESSION['name'])){//Determine whether to log in
 	echo '<script type="text/javascript">alert("please log in first!")</script>';
 	echo '<script type="text/javascript">location.href="index.php";</script>';
 	exit;
 	}
  
-	$rs2=mysqli_query($link,"select tb_study.typeid, count(tb_study.typeid),count(tb_study.typeid) as total from tb_study,tb_sale where tb_study.eaid=tb_sale.goodid  GROUP BY tb_study.typeid"); //查询数据库
-	while($row=mysqli_fetch_array($rs2)){ //遍历
+	$rs2=mysqli_query($link,"select tb_study.typeid, count(tb_study.typeid),count(tb_study.typeid) as total from tb_study,tb_sale where tb_study.eaid=tb_sale.goodid  GROUP BY tb_study.typeid"); //query the database
+	while($row=mysqli_fetch_array($rs2)){ //traverse
  
 ?>
 
