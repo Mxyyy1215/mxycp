@@ -6,7 +6,7 @@ include("conn.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -18,8 +18,8 @@ include("conn.php");
  if(isset($_SESSION['yonghu'])){ echo  "<p>Welcome user:".$_SESSION['yonghu']."Log in,  <a href='mydingdan.php'>My Order</a>  <a href='tuichu.php'>Exit system</a></p>"; }
  
 	?>
-     <a href='seller/index.php'>Merchants landing</a>
-   <a href='seller/res.php'>Business registration</a>
+     <a href='seller/index.php'>Seller Login</a>
+   <a href='seller/res.php'>Seller Registration</a>
     </div>    </div>
 <div class="header">
   <div class="headmain">
@@ -70,7 +70,7 @@ if(!isset($_SESSION['yonghu'])){
 	$rs=mysqli_query($link,"select * from tb_study,tb_sale where tb_study.eaid=tb_sale.goodid and tb_sale.type='1'");
 	$total=mysqli_num_rows($rs);
 	$pagesize=6;
-	$numofpage=ceil($total/$pagesize);//获取最大值
+	$numofpage=ceil($total/$pagesize);//Get maximum value
 	if(isset($_GET['page'])){
 		$currentpage=$_GET['page'];
 		}else{
@@ -85,10 +85,10 @@ if(!isset($_SESSION['yonghu'])){
          
               <td bgcolor="#FFFFFF"style="text-align:center;"><?php echo $row['goodprice'];?>元</td>
               <td bgcolor="#FFFFFF"style="text-align:center;"><?php  
-			  															if($row['zt']==0){ echo "Goods off shelves";}//商品下架
-			  														if($row['zt']==1){ echo "Successful purchase";}//商品被一口价买走
-																	if($row['zt']==2){ echo "Bidding in progress";} //正在竞价中
-			  														if($row['zt']==3){ echo "The product is bought by the highest bidder";}//商品被竞价最高者买走
+			  															if($row['zt']==0){ echo "Goods off shelves";}//Goods from the shelves
+			  														if($row['zt']==1){ echo "Successful purchase";}//The goods were bought at a single price
+																	if($row['zt']==2){ echo "Bidding in progress";} //In the bidding
+			  														if($row['zt']==3){ echo "The product is bought by the highest bidder";}//The goods were bought by the highest bidder
 			  														 
 															 ?></td>
              </tr>

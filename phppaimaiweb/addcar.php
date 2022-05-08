@@ -21,39 +21,39 @@ if($buynum<$lowprice){
 			 $sqls="INSERT INTO tb_sale (`goodid`,`goodprice`,`type`,`user`)  VALUES('$id','$oneprice','$type','$_SESSION[yonghu]')";
 			 $rss=mysqli_query($link,$sqls); 
 				$sqls="update tb_study set zt='1' where eaid='$id'";
-				$rss=mysqli_query($link,$sqls);//执行sql语句
+				$rss=mysqli_query($link,$sqls);//Execute SQL statement
 				echo '<script type="text/javascript">alert("Successful purchase");</script>';
 	          echo '<script type="text/javascript">location.href="mydingdan.php";</script>';
 			
 	 }
-			//这是一口价的代码
+			//buy it now
 		if($type==2){
-			   echo $sql2="select * from tb_sale where goodid='$id' and user='$_SESSION[yonghu]' and type='2'"; //查询数据
-					 $rs2=mysqli_query($link,$sql2);//执行sql语句
-					 $num2=mysqli_num_rows($rs2); //统计查询多少数据
+			   echo $sql2="select * from tb_sale where goodid='$id' and user='$_SESSION[yonghu]' and type='2'"; //query data
+					 $rs2=mysqli_query($link,$sql2);//Execute SQL statement
+					 $num2=mysqli_num_rows($rs2); //Statistics how much data is queried
 					 $row=mysqli_fetch_array($rs2);
 				 if($num2>0){
 					 $titles=$row['goodprice']+$buynum;	
 					$sqlq="INSERT INTO tb_saleuser (`goodid`,`price`,`user`,`time`)  VALUES('$id','$titles','$_SESSION[yonghu]',now())";
-					$rsq=mysqli_query($link,$sqlq);//执行sql语句
+					$rsq=mysqli_query($link,$sqlq);//Execute SQL statement
 					
 					$sqls="update tb_sale set goodprice='$titles' where goodid='$id' and type='2' ";
-					$rss=mysqli_query($link,$sqls);//执行sql语句
+					$rss=mysqli_query($link,$sqls);//Execute SQL statement
 				 }else{
 				 $titles=$price+$buynum;
 					$sqlq="INSERT INTO tb_saleuser (`goodid`,`price`,`user`,`time`)  VALUES('$id','$titles','$_SESSION[yonghu]',now())";
-					$rsq=mysqli_query($link,$sqlq);//执行sql语句 
+					$rsq=mysqli_query($link,$sqlq);//Execute SQL statement 
 					
 					 $sqls="INSERT INTO tb_sale (`goodid`,`goodprice`,`type`,`user`)  VALUES('$id','$titles','$type','$_SESSION[yonghu]')";
-					$rss=mysqli_query($link,$sqls);//执行sql语句
+					$rss=mysqli_query($link,$sqls);//Execute SQL statement
 					
 						$sqlss="update tb_study set zt='2' where eaid='$id'";
-				$rsss=mysqli_query($link,$sqlss);//执行sql语句
+				$rsss=mysqli_query($link,$sqlss);//Execute SQL statement
 					 }
 						echo '<script type="text/javascript">alert("Successful bidding");</script>';
 	          echo '<script type="text/javascript">location.href="mydingdan.php";</script>';
 			}
-		//这是拍卖价的代码
+		//bidding
 		
 		
 		

@@ -9,7 +9,7 @@ if(!isset($_SESSION['yonghu'])){
 		}
  
 				$sqls="update tb_study set zt='3' where eaid='$id'";
-				$rss=mysqli_query($link,$sqls);//执行sql语句
+				$rss=mysqli_query($link,$sqls);//Execute SQL statement
 				echo '<script type="text/javascript">alert("Confirm the bid is successful");</script>';
 	          echo '<script type="text/javascript">location.href="default.php";</script>';
 	 

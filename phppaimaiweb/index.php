@@ -1,6 +1,6 @@
 <?php
 include("conn.php");
-    $sql="select * from tb_study "; //查询10条数据库内容
+    $sql="select * from tb_study "; //Example Query 10 database contents
 	$rs=mysqli_query($link,$sql);
 	    $nowdate=  date('Y-m-d h:i:s');
  	while($row=mysqli_fetch_array($rs)){
@@ -16,7 +16,7 @@ include("conn.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="js/jquery.js" type="text/javascript"></script>
 <script type=text/javascript src="js/jquery.flexslider.js"></script>
@@ -31,8 +31,8 @@ include("conn.php");
  
 	?>
   
-    <a href='seller/index.php'>Merchants landing</a>
-   <a href='seller/res.php'>Business registration</a>
+    <a href='seller/index.php'>Seller Login</a>
+   <a href='seller/res.php'>Seller Registration</a>
     </div>    </div>
 <div class="header">
   <div class="headmain">

@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-session_destroy(); //销毁session缓存的数据
+session_destroy(); //Destroy session cached data
 echo '<script type="text/javascript">alert("Logged out!")</script>';
 echo '<script type="text/javascript">location.href="index.php";</script>';
 ?> 
@@ -10,7 +10,7 @@ echo '<script type="text/javascript">location.href="index.php";</script>';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 </head>
 
 <body>

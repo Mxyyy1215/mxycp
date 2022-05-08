@@ -6,7 +6,7 @@ include("conn.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -20,8 +20,8 @@ include("conn.php");
  
 	?>
   
-    <a href='seller/index.php'>Merchants landing</a>
-   <a href='seller/res.php'>Business registration</a>
+    <a href='seller/index.php'>Seller Login</a>
+   <a href='seller/res.php'>Seller Registration</a>
     </div>    </div>
 <div class="header">
   <div class="headmain">
@@ -51,11 +51,11 @@ include("conn.php");
    <div class="hotkecheng">
     <ul>
       <?php
-	$search=empty($_POST['search'])?'':$_POST['search']; //通过url判断是否获取分类
-	  $sql="select * from tb_study   where EAname like '%$search%'or introduction like '%$search%'   order by eaid desc  "; //查询10条数据库内容
-	$rs=mysqli_query($link,$sql); // 执行sql
+	$search=empty($_POST['search'])?'':$_POST['search']; //Determine whether a category is obtained by the URL
+	  $sql="select * from tb_study   where EAname like '%$search%'or introduction like '%$search%'   order by eaid desc  "; //Example Query 10 database contents
+	$rs=mysqli_query($link,$sql); // Execute SQL
 	
-	$num=mysqli_num_rows($rs); //统计查询多少数据
+	$num=mysqli_num_rows($rs); //Statistics how much data is queried
 	while($row=mysqli_fetch_array($rs)){
 		?>
       <li>

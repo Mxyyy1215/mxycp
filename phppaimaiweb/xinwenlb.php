@@ -6,7 +6,7 @@ include("conn.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -17,7 +17,7 @@ include("conn.php");
  if(isset($_SESSION['yonghu'])){ echo  "<p>Welcome user:".$_SESSION['yonghu']."Log in,  <a href='mydingdan.php'>My oder</a>  <a href='tuichu.php'>Exit system</a></p>"; }
  
 	?>
-    <a href='seller/index.php'>Merchants landing</a> <a href='seller/res.php'>Business registration</a> </div>
+    <a href='seller/index.php'>Seller Login</a> <a href='seller/res.php'>Seller Registration</a> </div>
 </div>
 <div class="header">
   <div class="headmain">
@@ -44,10 +44,10 @@ include("conn.php");
   </div>
   <div class="xinwenxiangqi">
     <?php
-		$id=$_GET['id']; //获取url传递的id参数
-	  $sql="select * from tb_gonggao where id='$id' "; //查询数据库内容
-	$rs=mysqli_query($link,$sql);//执行sql
-	while($row=mysqli_fetch_array($rs)){ //输出数据
+		$id=$_GET['id']; //Gets the ID parameter passed by the URL
+	  $sql="select * from tb_gonggao where id='$id' "; //Querying database contents
+	$rs=mysqli_query($link,$sql);//Execute SQL
+	while($row=mysqli_fetch_array($rs)){ //The output data
 		?>
     <div class="xwtop"><?php echo $row['title'];?> </div>
     <div class="xwcontent">

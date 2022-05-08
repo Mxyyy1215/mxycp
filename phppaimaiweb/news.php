@@ -7,7 +7,7 @@ include("conn.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="js/jquery.js" type="text/javascript"></script>
 </head>
@@ -18,7 +18,7 @@ include("conn.php");
     <?php
  if(isset($_SESSION['yonghu'])){ echo  "<p>Welcome user：".$_SESSION['yonghu']."Log in,  <a href='mydingdan.php'>My Order</a>  <a href='tuichu.php'>Exit system</a></p>"; }
  	?>
-    <a href='seller/index.php'>Merchants landing</a> <a href='seller/res.php'>Business registration</a> </div>
+    <a href='seller/index.php'>Seller Login</a> <a href='seller/res.php'>Seller Registration</a> </div>
 </div>
 <div class="header">
   <div class="headmain">
@@ -46,9 +46,9 @@ include("conn.php");
   <div class="newsbox">
     <?php
 		$eaid=$_GET['eaid'];
-	  $sql="select * from tb_study where eaid='$eaid' "; //查询数据
-	$rs=mysqli_query($link,$sql);//执行sql语句
-	while($row=mysqli_fetch_array($rs)){//遍历输出
+	  $sql="select * from tb_study where eaid='$eaid' "; //Query data
+	$rs=mysqli_query($link,$sql);//Execute SQL statement
+	while($row=mysqli_fetch_array($rs)){//Traverse the output
 		?>
     <div class="jdbxo">
       <div class="jdrgtitle"> <img src="seller<?php echo $row['photo'];?>" />
@@ -57,9 +57,9 @@ include("conn.php");
         <p>Commodity base price:<strong> <?php echo $row['price'];?></strong> $</p>
         <p>Current bid:<strong>
           <?php 
-			$sql2="select * from tb_sale where goodid='$eaid' "; //查询数据
-			$rs2=mysqli_query($link,$sql2);//执行sql语句
-			$num2=mysqli_num_rows($rs2); //统计查询多少数据
+			$sql2="select * from tb_sale where goodid='$eaid' "; //Query data
+			$rs2=mysqli_query($link,$sql2);//Execute SQL statement
+			$num2=mysqli_num_rows($rs2); //Statistics how much data is queried
 			$row2=mysqli_fetch_array($rs2);
 			if($num2==0){echo "No bids";}else{echo $row2['goodprice'].'$'; }
 		 ?>
@@ -80,12 +80,12 @@ include("conn.php");
           
           <p>Current state:
            <?php 
-		   	if($row['zt']==0){ echo "Goods off shelves";}//商品下架
-																if($row['zt']==0){ echo "Goods off shelves";}//商品下架
-			  														if($row['zt']==1){ echo "Commodities were bought at a price";}//商品被一口价买走
-																	if($row['zt']==2){ echo "Bidding in progress";} //正在竞价中
-			  														if($row['zt']==3){ echo "The product is bought by the highest bidder";}//商品被竞价最高者买走		   
-			  														if($row['zt']==4){ echo "No bids";}//商品被竞价最高者买走		   
+		   	if($row['zt']==0){ echo "Goods off shelves";}//Goods from the shelves
+																if($row['zt']==0){ echo "Goods off shelves";}//Goods from the shelves
+			  														if($row['zt']==1){ echo "Commodities were bought at a price";}//The goods were bought at a single price
+																	if($row['zt']==2){ echo "Bidding in progress";} //In the bidding
+			  														if($row['zt']==3){ echo "The product is bought by the highest bidder";}//The goods were bought by the highest bidder		   
+			  														if($row['zt']==4){ echo "No bids";}//The goods were bought by the highest bidder		   
 																	?>
             </p>
           <input  id="bidbuy"  style="<?php if($row['zt']=='0' || $row['zt']=='1' ){ echo "background: #f0f0f0; color:#888";} ?> " class="btu"  <?php if($row['zt']=='0' || $row['zt']=='1' ){ echo "disabled";} ?> value="Bid to buy">

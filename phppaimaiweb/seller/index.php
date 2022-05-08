@@ -47,7 +47,7 @@ function ck(f){
   <div class="butbox">
 
     <form method="post"  action="index.php" onsubmit="return ck(this)">
-      <h3 class="saletips">Merchant login<a href="res.php">Registered</a></h3>
+      <h3 class="saletips">Seller Login<a href="res.php">Registered</a></h3>
       <br />
       <br />
       <dl>

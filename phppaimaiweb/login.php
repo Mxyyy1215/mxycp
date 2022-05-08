@@ -1,18 +1,18 @@
 <?php
   include("conn.php");
  
-	if(isset($_POST['submit'])){ //判断是否提交
+	if(isset($_POST['submit'])){ //Decide whether to submit
 		  $username=$_POST['yonghuming'];
 		  $password=md5($_POST['mima']);
-		  //通过post获取数据
+		  //Get data by POST
 	 
- 	    $sql="select  * from  tb_user where username='$username' and  password='$password'";//sql选择语句
+ 	    $sql="select  * from  tb_user where username='$username' and  password='$password'";//SQL select statement
  
 		$result = mysqli_query($link,$sql); 
-		 $result=mysqli_num_rows($result); //统计查询多少数据
-   if($result>0)//判断登陆是否成功
+		 $result=mysqli_num_rows($result); //Statistics how much data is queried
+   if($result>0)//Determine whether the login was successful
       {
-		  $_SESSION['yonghu']=$username; //登陆成功则将数据库存储到缓存
+		  $_SESSION['yonghu']=$username; //A successful login will store the database in cache
        echo "<script>alert('Landed successfully');window.location.href='login.php'</script>";
       }else{
        echo "<script>alert('Login failed');window.location.href='login.php'</script>";
@@ -24,7 +24,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GU2</title>
+<title>Art auction management</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -38,8 +38,8 @@
  
 	?>
   
-    <a href='seller/index.php'>Merchants landing</a>
-   <a href='seller/res.php'>Business registration</a>
+    <a href='seller/index.php'>Seller Login</a>
+   <a href='seller/res.php'>Seller Registration</a>
     </div>    </div>
 <div class="header">
   <div class="headmain">
